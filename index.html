@@ -1,0 +1,1287 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="icon" href="data:," />
+    <meta name="description" content="A.M. — batteur et percussionniste électrique pour festivals, mariages et événements au Maroc. Kits signatures : festival marocain, mariage, moderne." />
+    <title>A.M. — Le rythme qui marque | Batteur &amp; percussionniste électrique</title>
+    <link rel="preload" as="image" href="assets/am-hero-hd.jpg" fetchpriority="high" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      :root{
+        --bg:#0c0a08;
+        --bg2:#131009;
+        --panel:#1a150e;
+        --panel2:#211a11;
+        --line:rgba(232,220,196,.16);
+        --line-soft:rgba(232,220,196,.09);
+        --beige:#e8dcc4;
+        --beige-dim:#c9b995;
+        --cream:#f7f1e3;
+        --muted:#b3a88f;
+        --faint:#8a7f68;
+        --amber:#d9a441;
+        --radius:14px;
+        --serif:"Cormorant Garamond",Georgia,serif;
+        --sans:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+      }
+      *{box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      body{
+        margin:0;background:var(--bg);color:var(--cream);
+        font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.65;
+        -webkit-font-smoothing:antialiased;
+      }
+      img{max-width:100%;display:block}
+      a{color:inherit}
+      ::selection{background:var(--amber);color:#171106}
+
+      /* ---------- Header ---------- */
+      header{
+        position:fixed;inset:0 0 auto 0;z-index:50;
+        display:flex;align-items:center;justify-content:space-between;gap:16px;
+        padding:14px clamp(16px,4vw,44px);
+        background:linear-gradient(180deg,rgba(8,6,4,.88),rgba(8,6,4,.55) 70%,transparent);
+        backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+      }
+      .brand{display:flex;align-items:center;gap:30px;text-decoration:none}
+      .logo-img{height:56px;width:auto;flex:0 0 auto;display:block}
+      .foot .logo-img{height:64px}
+      .brand-text{display:flex;flex-direction:column;gap:5px;line-height:1.15;padding-left:30px;border-left:1px solid var(--line-soft)}
+      .brand-text strong{font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:.14em;color:var(--cream)}
+      .brand-text small{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--beige-dim)}
+      nav.main{display:flex;gap:30px;align-items:center}
+      nav.main a{
+        text-decoration:none;font-size:13.5px;letter-spacing:.18em;text-transform:uppercase;
+        color:var(--beige);opacity:.85;padding:6px 2px;border-bottom:1px solid transparent;
+      }
+      nav.main a:hover{opacity:1;border-bottom-color:var(--amber)}
+      nav.main a.btn{color:#171106;opacity:1;border-bottom:1px solid var(--beige)}
+      nav.main a.btn:hover{background:var(--cream)}
+      .btn{
+        display:inline-flex;align-items:center;gap:10px;cursor:pointer;
+        font-family:var(--sans);font-weight:500;font-size:14px;letter-spacing:.16em;text-transform:uppercase;
+        text-decoration:none;padding:13px 26px;border-radius:999px;border:1px solid var(--beige);
+        color:#171106;background:var(--beige);transition:background .25s,color .25s,border-color .25s;
+      }
+      .btn:hover{background:var(--cream);border-color:var(--cream)}
+      .btn.ghost{background:transparent;color:var(--beige)}
+      .btn.ghost:hover{background:rgba(232,220,196,.12);color:var(--cream)}
+      .btn.small{padding:10px 20px;font-size:12.5px}
+      .burger{
+        display:none;background:none;border:1px solid var(--line);border-radius:10px;
+        width:44px;height:44px;cursor:pointer;padding:10px;
+      }
+      .burger svg{width:100%;height:100%;stroke:var(--beige)}
+
+      /* ---------- Hero ---------- */
+      .hero{
+        position:relative;min-height:100svh;display:flex;align-items:flex-end;
+        isolation:isolate;overflow:hidden;
+      }
+      .hero img.bg{
+        position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:64% 36%;
+        z-index:-2;filter:none;
+      }
+      .hero::before{
+        content:"";position:absolute;inset:0;z-index:-1;
+        background:
+          radial-gradient(60% 45% at 18% 12%,rgba(217,164,65,.12),transparent 70%),
+          linear-gradient(90deg,rgba(12,10,8,.42) 0%,rgba(12,10,8,.16) 38%,transparent 62%),
+          linear-gradient(180deg,transparent 0%,transparent 52%,rgba(12,10,8,.34) 76%,rgba(12,10,8,.78) 93%,var(--bg) 100%);
+      }
+      .hero h1,.hero .lead,.hero .artist-name,.hero .over{text-shadow:0 2px 22px rgba(8,5,2,.45),0 1px 4px rgba(8,5,2,.4)}
+      .hero-inner{
+        width:100%;max-width:1180px;margin:0 auto;
+        padding:150px clamp(18px,4vw,44px) 64px;
+      }
+      .hero .over{
+        display:inline-flex;align-items:center;gap:12px;color:var(--beige);
+        font-size:13px;letter-spacing:.34em;text-transform:uppercase;margin:0 0 18px;
+      }
+      .hero .over::before{content:"";width:44px;height:1px;background:var(--amber)}
+      h1{
+        font-family:var(--serif);font-weight:600;margin:0;
+        font-size:clamp(52px,9.5vw,118px);line-height:.98;letter-spacing:.01em;color:var(--cream);
+      }
+      h1 .am{color:var(--beige);white-space:nowrap}
+      h1 em{font-style:italic;font-weight:500;color:var(--beige)}
+      .hero p.lead{
+        max-width:620px;margin:22px 0 0;font-size:clamp(17px,2.2vw,20px);color:#e6dcc4;
+      }
+      .artist-name{
+        font-family:var(--serif);font-style:italic;font-weight:500;
+        font-size:clamp(30px,4.6vw,44px);line-height:1.15;color:var(--beige);
+        margin:30px 0 0;letter-spacing:.015em;
+        display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+      }
+      .artist-name::after{content:"";width:72px;height:1px;background:linear-gradient(90deg,var(--amber),transparent)}
+      .name-inline{
+        font-family:var(--serif);font-style:italic;font-weight:600;
+        font-size:1.18em;color:var(--beige);white-space:nowrap;
+      }
+      .contact-name{
+        font-family:var(--serif);font-style:italic;font-weight:500;
+        font-size:clamp(26px,3.4vw,34px);color:var(--beige);margin:10px 0 0;line-height:1.2;
+      }
+      .foot .artist{
+        font-family:var(--serif);font-style:italic;font-weight:500;
+        font-size:19px;color:var(--beige-dim);display:block;margin-top:2px;
+      }
+      .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+      .hero-tags{
+        display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:44px;padding-top:22px;
+        border-top:1px solid var(--line-soft);
+        font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);
+      }
+      .hero-tags span{display:inline-flex;align-items:center;gap:10px}
+      .hero-tags i{width:6px;height:6px;border-radius:50%;background:var(--amber);display:inline-block}
+
+      /* ---------- Sections ---------- */
+      section{padding:clamp(64px,9vw,110px) clamp(18px,4vw,44px)}
+      .wrap{max-width:1180px;margin:0 auto}
+      .sec-head{max-width:720px;margin-bottom:clamp(30px,5vw,52px)}
+      .sec-head .kicker{
+        font-size:12.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;
+        display:flex;align-items:center;gap:12px;
+      }
+      .sec-head .kicker::after{content:"";flex:0 0 52px;height:1px;background:var(--line)}
+      h2{font-family:var(--serif);font-weight:600;font-size:clamp(34px,5vw,52px);line-height:1.08;margin:0;color:var(--cream)}
+      .sec-head p{color:var(--muted);margin:14px 0 0;font-size:17.5px}
+
+      /* About */
+      .about{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
+      .about figure{margin:0;position:relative}
+      .about figure img{
+        border-radius:var(--radius);aspect-ratio:4/5;object-fit:cover;width:100%;
+        border:1px solid var(--line);
+        outline:1px solid rgba(232,220,196,.22);outline-offset:8px;
+      }
+      .about h2{margin-bottom:18px}
+      .about p{color:var(--muted);margin:0 0 16px}
+      .about p strong{color:var(--beige);font-weight:500}
+      .pillars{display:grid;gap:0;margin-top:26px;border-top:1px solid var(--line-soft)}
+      .pillars div{
+        display:flex;gap:16px;align-items:baseline;padding:14px 2px;border-bottom:1px solid var(--line-soft);
+      }
+      .pillars b{font-family:var(--serif);font-size:22px;color:var(--amber);font-weight:600;min-width:38px}
+      .pillars span{color:#ddd2b8}
+      .pillars small{display:block;color:var(--faint);font-size:14.5px}
+
+      /* Kits */
+      #kits{background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 18%,var(--bg2) 82%,var(--bg) 100%)}
+      .kits{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+      .kit{
+        background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);
+        overflow:hidden;display:flex;flex-direction:column;
+      }
+      .kit .ph{position:relative;overflow:hidden}
+      .kit .ph img{width:100%;aspect-ratio:4/3;object-fit:cover}
+      .kit .num{
+        position:absolute;top:14px;left:14px;background:rgba(10,8,5,.72);color:var(--beige);
+        border:1px solid var(--line);border-radius:999px;padding:4px 13px;
+        font-size:12px;letter-spacing:.24em;text-transform:uppercase;backdrop-filter:blur(4px);
+      }
+      .kit .body{padding:24px 24px 26px;display:flex;flex-direction:column;gap:12px;flex:1}
+      .kit h3{font-family:var(--serif);font-size:27px;font-weight:600;margin:0;color:var(--cream);line-height:1.15}
+      .kit p{margin:0;color:var(--muted);font-size:16px}
+      .kit ul{list-style:none;margin:6px 0 0;padding:16px 0 0;border-top:1px solid var(--line-soft);display:grid;gap:8px}
+      .kit li{font-size:15px;color:#d8cbae;display:flex;gap:10px;align-items:baseline}
+      .kit li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--amber);flex:0 0 auto;transform:translateY(-2px)}
+      .kit .for{margin-top:auto;padding-top:14px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--beige-dim)}
+
+      /* Videos */
+      .videos{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+      .slot{
+        position:relative;border:1px dashed rgba(232,220,196,.35);border-radius:var(--radius);
+        aspect-ratio:16/9;display:grid;place-items:center;text-align:center;padding:24px;
+        background:
+          radial-gradient(70% 90% at 50% 0%,rgba(217,164,65,.08),transparent 70%),
+          var(--panel);
+      }
+      .slot .play{
+        width:64px;height:64px;border-radius:50%;border:1px solid var(--beige);
+        display:grid;place-items:center;margin:0 auto 14px;color:var(--beige);
+      }
+      .slot .play svg{width:22px;height:22px;fill:currentColor;margin-left:3px}
+      .slot h3{font-family:var(--serif);font-size:23px;font-weight:600;margin:0 0 4px;color:var(--cream)}
+      .slot p{margin:0;color:var(--faint);font-size:14.5px;letter-spacing:.06em}
+      .slot .tag{
+        position:absolute;top:14px;left:14px;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;
+        color:var(--beige-dim);border:1px solid var(--line);border-radius:999px;padding:4px 12px;
+      }
+      .videos-note{margin-top:20px;color:var(--faint);font-size:15px}
+
+      /* Real videos */
+      .videos-real{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-bottom:22px}
+      .vcard{
+        background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);
+        overflow:hidden;display:flex;flex-direction:column;
+      }
+      .vcard .vmedia{background:#000;display:grid;place-items:center}
+      .vcard video{
+        width:auto;max-width:100%;height:min(62vh,560px);aspect-ratio:9/16;object-fit:contain;
+        display:block;background:#000;
+      }
+      .vcard .vbody{padding:18px 22px 20px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+      .vcard h3{font-family:var(--serif);font-size:23px;font-weight:600;margin:0;color:var(--cream)}
+      .vcard .vtag{
+        font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--beige-dim);
+        border:1px solid var(--line);border-radius:999px;padding:4px 12px;
+      }
+      .vcard .vdur{margin-left:auto;color:var(--faint);font-size:14px;letter-spacing:.06em}
+
+      /* Le Show — carrousel images + vidéos */
+      .show{
+        background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);
+        overflow:hidden;
+      }
+      .show-stage{position:relative;background:#070503}
+      .show-viewport{overflow:hidden}
+      .show-track{display:flex;transition:transform .65s cubic-bezier(.22,.8,.28,1)}
+      .show-slide{
+        flex:0 0 100%;margin:0;display:flex;flex-direction:column;
+      }
+      .show-media{
+        position:relative;height:min(66vh,620px);overflow:hidden;background:#070503;
+      }
+      .show-media img,.show-media video{
+        position:absolute;inset:0;width:100%;height:100%;max-width:none;
+        object-fit:contain;display:block;background:#070503;
+      }
+      .show-cap{
+        display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;
+        padding:16px 22px 18px;border-top:1px solid var(--line-soft);background:var(--panel);
+      }
+      .show-cap h3{font-family:var(--serif);font-size:23px;font-weight:600;margin:0;color:var(--cream)}
+      .show-cap .show-kind{
+        font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--beige-dim);
+        border:1px solid var(--line);border-radius:999px;padding:4px 12px;
+      }
+      .show-nav{
+        position:absolute;top:calc(min(66vh,620px)/2);transform:translateY(-50%);z-index:3;
+        width:46px;height:46px;border-radius:50%;cursor:pointer;padding:0;
+        background:rgba(10,8,5,.66);border:1px solid rgba(232,220,196,.4);color:var(--cream);
+        display:grid;place-items:center;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+        transition:background .25s ease,border-color .25s ease,color .25s ease;
+      }
+      .show-nav:hover{background:rgba(217,164,65,.28);border-color:var(--amber);color:var(--cream)}
+      .show-nav:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+      .show-nav svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+      .show-nav.prev{left:14px}
+      .show-nav.next{right:14px}
+      .show-bar{
+        display:flex;align-items:center;justify-content:space-between;gap:16px;
+        padding:14px 22px;border-top:1px solid var(--line-soft);background:var(--panel);
+      }
+      .show-dots{display:flex;gap:9px;flex-wrap:wrap}
+      .show-dots button{
+        width:11px;height:11px;border-radius:50%;cursor:pointer;padding:0;
+        background:transparent;border:1px solid rgba(232,220,196,.55);
+        transition:background .25s ease,border-color .25s ease,transform .25s ease;
+      }
+      .show-dots button:hover{border-color:var(--amber)}
+      .show-dots button.active{background:var(--amber);border-color:var(--amber);transform:scale(1.15)}
+      .show-dots button:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+      .show-count{color:var(--faint);font-size:13.5px;letter-spacing:.18em}
+      @media (prefers-reduced-motion:reduce){
+        .show-track{transition:none}
+      }
+
+      /* Galerie */
+      #galerie{background:var(--bg2)}
+      .gal{columns:3;column-gap:18px}
+      .gal figure{
+        margin:0 0 18px;break-inside:avoid;background:var(--panel);
+        border:1px solid var(--line-soft);border-radius:var(--radius);overflow:hidden;
+      }
+      .gal button{
+        display:block;width:100%;padding:0;border:0;background:none;cursor:pointer;
+      }
+      .gal button:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+      .gal img{width:100%;height:auto;display:block}
+      .gal figcaption{
+        padding:13px 18px 15px;font-family:var(--serif);font-size:19px;font-weight:600;color:var(--beige);
+        text-align:left;
+      }
+      body.fx .gal figure{transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
+      body.fx .gal figure:hover{transform:translateY(-4px);border-color:rgba(217,164,65,.55);box-shadow:0 16px 36px rgba(0,0,0,.35)}
+
+      /* Events */
+      #evenements{background:var(--bg2)}
+      .events{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(28px,5vw,60px);align-items:start}
+      .events figure{margin:0}
+      .events figure img{border-radius:var(--radius);width:100%;aspect-ratio:4/3;object-fit:cover}
+      .events figure figcaption{color:var(--faint);font-size:13.5px;margin-top:10px;letter-spacing:.04em}
+      .ev-list{display:grid}
+      .ev{
+        display:grid;grid-template-columns:auto 1fr;gap:6px 20px;padding:20px 4px;
+        border-bottom:1px solid var(--line-soft);
+      }
+      .ev:first-child{padding-top:4px}
+      .ev .ic{
+        grid-row:span 2;width:46px;height:46px;border:1px solid var(--line);border-radius:12px;
+        display:grid;place-items:center;color:var(--amber);
+      }
+      .ev .ic svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+      .ev h3{margin:0;font-family:var(--serif);font-size:24px;font-weight:600;color:var(--cream)}
+      .ev p{margin:0;color:var(--muted);font-size:15.5px}
+
+      /* Booking */
+      .booking{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,60px);align-items:start}
+      .booking .side p{color:var(--muted)}
+      .contact-lines{display:grid;gap:14px;margin-top:26px}
+      .contact-lines > div{display:flex;gap:14px;align-items:flex-start}
+      .contact-lines .ic{
+        width:42px;height:42px;flex:0 0 auto;border:1px solid var(--line);border-radius:11px;
+        display:grid;place-items:center;color:var(--amber);
+      }
+      .contact-lines .ic svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+      .contact-lines b{display:block;font-weight:500;color:var(--cream);font-size:16px}
+      .contact-lines span{color:var(--muted);font-size:15px}
+      .contact-lines a{color:var(--beige);text-decoration:none;border-bottom:1px solid rgba(232,220,196,.35)}
+      .contact-lines a:hover{color:var(--cream);border-bottom-color:var(--amber)}
+      .foot-contact{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14.5px;color:var(--muted)}
+      .foot-contact a{color:var(--beige);text-decoration:none}
+      .foot-contact a:hover{color:var(--cream);text-decoration:underline}
+      form{
+        background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);
+        padding:clamp(22px,3.4vw,34px);display:grid;gap:16px;
+      }
+      .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+      label{display:grid;gap:7px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--beige-dim)}
+      input,select,textarea{
+        font-family:var(--sans);font-size:16px;font-weight:300;color:var(--cream);
+        background:#100d09;border:1px solid var(--line);border-radius:10px;
+        padding:12px 14px;width:100%;appearance:none;
+      }
+      select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e8dcc4' fill='none' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+      textarea{resize:vertical;min-height:110px}
+      input:focus,select:focus,textarea:focus{outline:2px solid var(--amber);outline-offset:1px;border-color:transparent}
+      input[type="date"]{color-scheme:dark}
+      .form-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+      .result{
+        display:none;border:1px solid rgba(217,164,65,.5);background:rgba(217,164,65,.07);
+        border-radius:12px;padding:18px;
+      }
+      .result.show{display:block}
+      .result h3{margin:0 0 8px;font-family:var(--serif);font-size:22px;color:var(--cream)}
+      .result pre{
+        white-space:pre-wrap;word-break:break-word;margin:0 0 14px;
+        font-family:var(--sans);font-size:15px;color:#e2d7ba;background:rgba(0,0,0,.25);
+        border:1px solid var(--line-soft);border-radius:10px;padding:14px;
+      }
+      .result .row-btns{display:flex;flex-wrap:wrap;gap:10px}
+      .err{display:none;color:#f0b48a;font-size:14.5px}
+      .err.show{display:block}
+
+      footer{
+        border-top:1px solid var(--line-soft);padding:44px clamp(18px,4vw,44px) 34px;
+        background:#090705;
+      }
+      .foot{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:26px;align-items:center;justify-content:space-between}
+      .foot .slogan{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--beige)}
+      .foot nav{display:flex;gap:22px;flex-wrap:wrap}
+      .foot nav a{text-decoration:none;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+      .foot nav a:hover{color:var(--beige)}
+      .credits{max-width:1180px;margin:26px auto 0;color:#5f5747;font-size:12.5px;line-height:1.7}
+
+      @media (max-width:920px){
+        .about,.events,.booking{grid-template-columns:1fr}
+        .kits{grid-template-columns:1fr}
+        .about figure img{aspect-ratio:16/11}
+        .gal{columns:2}
+      }
+      @media (max-width:760px){
+        nav.main{
+          display:none;position:absolute;top:100%;left:12px;right:12px;
+          flex-direction:column;align-items:stretch;gap:0;
+          background:rgba(16,13,9,.97);border:1px solid var(--line);border-radius:14px;padding:10px;
+        }
+        nav.main.open{display:flex}
+        nav.main a{padding:13px 12px;border-bottom:1px solid var(--line-soft)}
+        nav.main a:last-of-type{border-bottom:none}
+        nav.main .btn{margin:8px 4px 4px;justify-content:center}
+        .burger{display:block}
+        header .btn.head-cta{display:none}
+        .fx-toggle .fx-label{display:none}
+        .fx-toggle button{padding:7px 11px;font-size:10.5px}
+        .videos{grid-template-columns:1fr}
+        .videos-real{grid-template-columns:1fr}
+        .vcard video{height:min(58vh,480px)}
+        .gal{columns:1}
+        .show-media{height:min(58vh,480px)}
+        .show-nav{top:calc(min(58vh,480px)/2);width:42px;height:42px}
+        .show-nav.prev{left:10px}
+        .show-nav.next{right:10px}
+        .show-cap h3{font-size:20px}
+        .row{grid-template-columns:1fr}
+        .hero-inner{padding-top:120px}
+        .brand{gap:20px}
+        .brand-text{padding-left:20px}
+        .brand-text small{display:none}
+        .logo-img{height:48px}
+        .foot .logo-img{height:56px}
+      }
+      /* ---------- Interrupteur d'effets (Classique / Aurora) ---------- */
+      header{transition:background .35s ease,box-shadow .35s ease}
+      header.scrolled{
+        background:rgba(9,7,5,.95);
+        box-shadow:0 12px 32px rgba(0,0,0,.5);
+        backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+      }
+      .fx-toggle{
+        display:flex;align-items:center;gap:2px;padding:3px;flex:0 0 auto;
+        border:1px solid var(--line);border-radius:999px;background:rgba(12,9,6,.6);
+      }
+      .fx-toggle .fx-label{
+        font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);
+        padding:0 4px 0 10px;white-space:nowrap;
+      }
+      .fx-toggle button{
+        appearance:none;border:0;background:transparent;cursor:pointer;
+        font-family:var(--sans);font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+        color:var(--beige-dim);padding:8px 15px;border-radius:999px;
+        transition:background .25s ease,color .25s ease;
+      }
+      .fx-toggle button:hover{color:var(--cream)}
+      .fx-toggle button.active{background:var(--beige);color:#171106}
+      .fx-toggle button:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+
+      /* ---------- Hero : touches Aurora ---------- */
+      .hero-badge{
+        display:inline-flex;align-items:center;gap:10px;width:fit-content;max-width:100%;
+        border-radius:999px;padding:6px 16px 6px 6px;margin:0 0 20px;
+        background:rgba(26,19,9,.5);border:1px solid rgba(217,164,65,.4);
+        backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+        font-size:12.5px;color:rgba(247,241,227,.78);
+      }
+      .hero-badge strong{color:var(--cream);font-weight:500}
+      .badge-dots{display:flex;flex:0 0 auto}
+      .badge-dots i{
+        width:22px;height:22px;border-radius:50%;display:block;
+        background:linear-gradient(135deg,#e3c078,var(--amber) 55%,#8a6420);
+        border:2px solid rgba(18,13,5,.9);
+      }
+      .badge-dots i+i{margin-left:-8px}
+      .play-group{display:inline-flex;align-items:center;gap:11px}
+      .play-btn{
+        width:50px;height:50px;border-radius:50%;cursor:pointer;padding:0;flex:0 0 auto;
+        background:rgba(232,220,196,.12);border:1px solid rgba(232,220,196,.4);color:var(--cream);
+        display:grid;place-items:center;
+        backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+        transition:transform .2s ease,background .25s ease,border-color .25s ease;
+      }
+      .play-btn svg{width:16px;height:16px;fill:currentColor;margin-left:2px}
+      .play-btn:hover{background:rgba(217,164,65,.3);border-color:var(--amber)}
+      .play-label{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--beige)}
+      .hero-socials{display:flex;gap:10px;margin-top:28px}
+      .hero-socials a{
+        width:38px;height:38px;border-radius:50%;
+        border:1px solid rgba(232,220,196,.3);color:rgba(247,241,227,.82);
+        display:flex;align-items:center;justify-content:center;text-decoration:none;
+        background:rgba(14,10,5,.35);
+        transition:color .2s ease,border-color .2s ease,transform .2s ease,background .2s ease;
+      }
+      .hero-socials a:hover{color:var(--amber);border-color:rgba(217,164,65,.65);background:rgba(217,164,65,.1)}
+      .hero-socials svg{width:16px;height:16px;fill:currentColor}
+
+      /* ---------- Effets Aurora actifs (mode par défaut) ---------- */
+      body.fx .hero img.bg{animation:kenburns 26s ease-in-out infinite alternate;will-change:transform}
+      body.fx .hero:hover img.bg{animation-play-state:paused}
+      @keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.03)}}
+      body.fx .hero-inner>*{animation:heroRise .8s ease-out both}
+      body.fx .hero-inner>*:nth-child(2){animation-delay:.1s}
+      body.fx .hero-inner>*:nth-child(3){animation-delay:.22s}
+      body.fx .hero-inner>*:nth-child(4){animation-delay:.34s}
+      body.fx .hero-inner>*:nth-child(5){animation-delay:.46s}
+      body.fx .hero-inner>*:nth-child(6){animation-delay:.58s}
+      body.fx .hero-inner>*:nth-child(7){animation-delay:.7s}
+      body.fx .hero-inner>*:nth-child(8){animation-delay:.82s}
+      @keyframes heroRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+      body.fx .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+      body.fx .reveal.in{opacity:1;transform:none}
+      body.fx .kits .kit.reveal{transition:opacity .7s ease,transform .45s ease,border-color .3s ease,box-shadow .3s ease}
+      body.fx .kits .kit:nth-child(2).reveal{transition-delay:0s,.08s,0s,0s}
+      body.fx .kits .kit:nth-child(3).reveal{transition-delay:0s,.16s,0s,0s}
+      body.fx .kits .kit.reveal.settled{transition-delay:0s,0s,0s,0s}
+
+      body.fx .btn{transition:background .25s,color .25s,border-color .25s,transform .2s ease}
+      body.fx .btn:hover{transform:translateY(-2px) scale(1.02)}
+      body.fx .btn:active{transform:scale(.97)}
+      body.fx .play-btn:hover{transform:scale(1.1)}
+      body.fx .play-btn:active{transform:scale(.93)}
+      body.fx .hero-socials a:hover{transform:translateY(-3px)}
+
+      body.fx .kit:hover{transform:translateY(-6px);border-color:rgba(217,164,65,.55);box-shadow:0 20px 44px rgba(0,0,0,.38)}
+      .kit .ph img{transition:transform .6s ease}
+      body.fx .kit:hover .ph img{transform:scale(1.06)}
+      .about figure img,.events figure img{transition:transform .6s ease}
+      body.fx .about figure:hover img{transform:scale(1.02)}
+      body.fx .events figure:hover img{transform:scale(1.02)}
+      body.fx .slot{transition:transform .3s ease,border-color .3s ease}
+      body.fx .slot:hover{transform:translateY(-4px);border-color:rgba(217,164,65,.6)}
+      body.fx .slot:hover .play{color:var(--amber);border-color:var(--amber)}
+      body.fx nav.main a{transition:opacity .2s ease,border-color .2s ease,color .2s ease}
+
+      /* ---------- Lightbox « Voir en live » ---------- */
+      .lightbox{
+        position:fixed;inset:0;z-index:100;background:rgba(8,5,2,.93);
+        display:none;align-items:center;justify-content:center;padding:24px;
+      }
+      .lightbox.open{display:flex}
+      .lightbox figure{margin:0;max-width:880px;width:100%;text-align:center}
+      .lightbox img{
+        width:auto;max-width:100%;height:auto;max-height:72vh;object-fit:contain;margin:0 auto;border-radius:10px;
+        border:1px solid rgba(217,164,65,.4);box-shadow:0 24px 80px rgba(0,0,0,.65);
+      }
+      .lightbox figcaption{
+        margin-top:16px;font-family:var(--serif);font-size:24px;font-weight:600;color:var(--cream);
+      }
+      .lightbox figcaption small{
+        display:block;margin-top:5px;font-family:var(--sans);
+        font-size:13.5px;font-weight:300;color:var(--muted);letter-spacing:.02em;
+      }
+      .lightbox figcaption a{color:var(--amber);text-decoration:none;border-bottom:1px solid rgba(217,164,65,.45)}
+      .lightbox-close{
+        position:absolute;top:20px;right:20px;width:42px;height:42px;border-radius:50%;
+        border:1px solid rgba(232,220,196,.35);background:rgba(14,10,5,.5);color:var(--cream);
+        font-size:17px;cursor:pointer;line-height:1;display:grid;place-items:center;
+      }
+      .lightbox-close:hover{border-color:var(--amber);color:var(--amber)}
+
+      @media (prefers-reduced-motion:reduce){
+        html{scroll-behavior:auto}
+        body.fx .hero img.bg{animation:none}
+        body.fx .hero-inner>*{animation:none}
+        body.fx .reveal{opacity:1;transform:none;transition:none}
+        body.fx .kit:hover,body.fx .slot:hover,body.fx .btn:hover{transform:none}
+      }
+    </style>
+  </head>
+  <body class="fx">
+    <header>
+      <a class="brand" href="#top" aria-label="A.M. — retour en haut">
+        <img class="logo-img" src="assets/logo-am.png" alt="Logo A.M. — Abdelmalek Moudakkir, batteur et percussionniste, derbouka stylisée sous le monogramme" width="839" height="537" />
+        <span class="brand-text">
+          <strong>A.M.</strong>
+          <small>Batteur · Percussions</small>
+        </span>
+      </a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainnav">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <nav class="main" id="mainnav" aria-label="Navigation principale">
+        <a href="#apropos">À propos</a>
+        <a href="#kits">Kits signatures</a>
+        <a href="#show">Le Show</a>
+        <a href="#videos">Vidéos</a>
+        <a href="#evenements">Événements</a>
+        <a href="#reservation" class="btn small">Réserver</a>
+      </nav>
+      <div class="fx-toggle" role="group" aria-label="Effets du site : basculer entre le mode classique et le mode Aurora">
+        <span class="fx-label" aria-hidden="true">Effets</span>
+        <button type="button" id="fxClassic" aria-pressed="false">Classique</button>
+        <button type="button" id="fxAurora" class="active" aria-pressed="true">Aurora</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <div class="hero">
+        <img class="bg" src="assets/am-hero-hd.jpg" alt="A.M. en pleine performance : derbouka ornée de motifs dorés entre les mains, micro de scène, tenue blanche sur fond beige" width="2752" height="3648" fetchpriority="high" decoding="async" />
+        <div class="hero-inner">
+          <div class="hero-badge">
+            <span class="badge-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span>Choisi pour vos <strong>mariages, festivals et soirées</strong></span>
+          </div>
+          <p class="over">Batteur &amp; percussionniste électrique</p>
+          <h1><span class="am">A.M.</span> —<br />Le rythme <em>qui marque</em></h1>
+          <p class="lead">Un seul musicien, une batterie électrique, et des percussions qui traversent les styles : des grandes scènes de festival aux plus belles soirées de mariage, A.M. transforme chaque événement en moment que le public n'oublie pas.</p>
+          <p class="artist-name">Abdelmalek Moudakkir</p>
+          <div class="hero-cta">
+            <a class="btn" href="https://wa.me/212780538222" target="_blank" rel="noopener">Réserver A.M.</a>
+            <span class="play-group">
+              <button class="play-btn" id="playBtn" type="button" aria-label="Voir en live — agrandir la photo d'A.M. en concert">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <span class="play-label">Voir en live</span>
+            </span>
+            <a class="btn ghost" href="#kits">Découvrir les kits</a>
+          </div>
+          <div class="hero-tags">
+            <span><i></i>Festivals</span>
+            <span><i></i>Mariages</span>
+            <span><i></i>Soirées privées</span>
+            <span><i></i>Événements d'entreprise</span>
+            <span><i></i>Basé au Maroc</span>
+          </div>
+          <div class="hero-socials">
+            <a href="https://wa.me/212780538222" target="_blank" rel="noopener" aria-label="Contacter A.M. sur WhatsApp">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            </a>
+            <a href="tel:+212780538222" aria-label="Appeler A.M. au +212 780 53 82 22">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </a>
+            <a href="mailto:moudakkirabdelmalek0@gmail.com" aria-label="Écrire à A.M. par e-mail">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- À PROPOS -->
+      <section id="apropos">
+        <div class="wrap about">
+          <figure class="reveal">
+            <img src="assets/am-portrait.jpg" alt="Portrait d'A.M. assis derrière ses percussions, derbouka dorée sur les genoux, devant son micro" loading="lazy" />
+          </figure>
+          <div class="reveal">
+            <div class="sec-head" style="margin-bottom:0">
+              <p class="kicker">À propos</p>
+              <h2>Le groove d'abord,<br />le spectacle ensuite</h2>
+            </div>
+            <p style="margin-top:18px">Derrière A.M., il y a <span class="name-inline">Abdelmalek Moudakkir</span>, batteur et percussionniste électrique. Son terrain de jeu : les <strong>événements et les festivals</strong>, là où le rythme doit porter une foule entière. Sa particularité : une batterie électronique programmée comme un instrument signature, capable de passer en quelques secondes d'un groove gnawa à un beat moderne.</p>
+            <p>Chaque prestation est préparée sur mesure : le kit, les sons et l'énergie sont choisis selon le lieu, le public et le moment de la soirée. Résultat : un show qui se voit autant qu'il s'écoute — et une piste qui ne se vide pas.</p>
+            <div class="pillars reveal">
+              <div><b>01</b><span>Un son reconnaissable<small>Percussions marocaines samplées et retravaillées dans le module électronique.</small></span></div>
+              <div><b>02</b><span>Un show visuel<small>Chaque frappe peut déclencher lumières et effets synchronisés au rythme.</small></span></div>
+              <div><b>03</b><span>Zéro improvisation logistique<small>Kits prêts par type d'événement : installation rapide, balance courte, départ propre.</small></span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KITS SIGNATURES -->
+      <section id="kits">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <p class="kicker">Kits signatures</p>
+            <h2>Trois kits, trois univers</h2>
+            <p>Chaque kit est une configuration complète — sons, pads et réglages — préparée à l'avance pour un type d'événement. On branche, on joue.</p>
+          </div>
+          <div class="kits">
+            <article class="kit reveal">
+              <div class="ph">
+                <img src="assets/am-derbouka.jpg" alt="Gros plan sur les mains d'A.M. frappant sa derbouka ornée de motifs dorés et de notes de musique" />
+                <span class="num">Kit 01</span>
+              </div>
+              <div class="body">
+                <h3>Kit Festival Marocain</h3>
+                <p>Le kit emblème d'A.M. : les percussions traditionnelles marocaines rencontrent l'électronique. Derbouka, bendir et krakebs sont samplés, bouclés et mélangés en direct à des sons électroniques puissants — le patrimoine, à volume de festival.</p>
+                <ul>
+                  <li>Derbouka, bendir &amp; krakebs samplés</li>
+                  <li>Grooves gnawa, chaâbi et ahidus revisités</li>
+                  <li>Basses électroniques et boucles live</li>
+                </ul>
+                <p class="for">Pour : festivals · scènes plein air · fêtes populaires</p>
+              </div>
+            </article>
+
+            <article class="kit reveal">
+              <div class="ph">
+                <img src="assets/am-kit-mariage.jpg" alt="Abdelmalek Moudakkir sur scène en chemise blanche et lunettes de soleil, baguettes en main devant son pad électronique, sous une lumière bleue de scène" style="object-position:62% 35%" loading="lazy" />
+                <span class="num">Kit 02</span>
+              </div>
+              <div class="body">
+                <h3>Kit Mariage</h3>
+                <p>Élégant au dîner, explosif sur la piste. Le kit mariage accompagne l'entrée des mariés, monte en puissance au fil de la soirée et fait participer les invités : percussions lumineuses, medleys orientaux et occidentaux, et des transitions pensées pour ne jamais laisser retomber l'ambiance.</p>
+                <ul>
+                  <li>Entrée des mariés &amp; moments forts mis en rythme</li>
+                  <li>Medleys chaâbi, oriental et international</li>
+                  <li>Animation percussive avec les invités</li>
+                </ul>
+                <p class="for">Pour : mariages · fiançailles · soirées privées</p>
+              </div>
+            </article>
+
+            <article class="kit reveal">
+              <div class="ph">
+                <img src="assets/am-kit-moderne.jpg" alt="Abdelmalek Moudakkir en session : lunettes, chemise verte à motifs, derbouka dorée à la main, entre les congas et sa derbouka turquoise" style="object-position:62% 38%" loading="lazy" />
+                <span class="num">Kit 03</span>
+              </div>
+              <div class="body">
+                <h3>Kit Moderne</h3>
+                <p>Le son des grandes scènes actuelles : batterie électronique complète, pads de déclenchement et sons de studio. Pop, funk, afrobeat, house ou hip-hop — le kit moderne s'adapte au répertoire du groupe ou du DJ, avec la précision d'un enregistrement et l'énergie du live.</p>
+                <ul>
+                  <li>Sons de studio, joués en direct</li>
+                  <li>Compatible scène avec groupe ou DJ</li>
+                  <li>Déclenchement d'effets et de séquences en MIDI</li>
+                </ul>
+                <p class="for">Pour : concerts · soirées d'entreprise · clubs</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- LE SHOW -->
+      <section id="show">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <p class="kicker">Le Show</p>
+            <h2>Le show, en images et en vidéo</h2>
+            <p>Photos et vidéos d'A.M. sur scène, dans un seul diaporama : faites défiler avec les flèches, les points ou le doigt — et cliquez sur une vidéo pour la lancer avec le son.</p>
+          </div>
+          <div class="show reveal" id="showCarousel">
+            <div class="show-stage">
+              <div class="show-viewport">
+                <div class="show-track" id="showTrack">
+                  <figure class="show-slide" data-kind="video">
+                    <div class="show-media">
+                      <video class="show-video" src="assets/am-live-long-web.mp4" poster="assets/am-live-long-poster.jpg" controls preload="metadata" playsinline width="540" height="960" aria-label="Vidéo — Live en plein air : A.M. joue en extérieur, le jour, aux baguettes"></video>
+                    </div>
+                    <figcaption class="show-cap"><h3>Live en plein air</h3><span class="show-kind">Vidéo</span></figcaption>
+                  </figure>
+                  <figure class="show-slide" data-kind="image">
+                    <div class="show-media">
+                      <img src="assets/am-galerie-portrait-derbouka.jpg" alt="Abdelmalek Moudakkir en blanc, assis, sa derbouka dorée sur les genoux, un carillon à sa gauche, en plein jour" width="854" height="1280" loading="lazy" />
+                    </div>
+                    <figcaption class="show-cap"><h3>Portrait — derbouka</h3><span class="show-kind">Photo</span></figcaption>
+                  </figure>
+                  <figure class="show-slide" data-kind="video">
+                    <div class="show-media">
+                      <video class="show-video" src="assets/am-live-short.mp4" poster="assets/am-live-short-poster.jpg" controls preload="metadata" playsinline width="576" height="1024" aria-label="Vidéo — Live, concert de nuit : scène éclairée, chanteurs et foule"></video>
+                    </div>
+                    <figcaption class="show-cap"><h3>Live — concert de nuit</h3><span class="show-kind">Vidéo</span></figcaption>
+                  </figure>
+                  <figure class="show-slide" data-kind="image">
+                    <div class="show-media">
+                      <img src="assets/am-galerie-groupe-scene.jpg" alt="Le groupe en tenue blanche, de dos sur scène, bras levés face au public et aux projecteurs" width="1280" height="854" loading="lazy" />
+                    </div>
+                    <figcaption class="show-cap"><h3>Sur scène, avec le groupe</h3><span class="show-kind">Photo</span></figcaption>
+                  </figure>
+                  <figure class="show-slide" data-kind="image">
+                    <div class="show-media">
+                      <img src="assets/am-galerie-scene-nuit-1.jpg" alt="Abdelmalek Moudakkir de profil sur une scène de nuit, entre deux projecteurs" width="1200" height="1600" loading="lazy" />
+                    </div>
+                    <figcaption class="show-cap"><h3>Scène de nuit</h3><span class="show-kind">Photo</span></figcaption>
+                  </figure>
+                  <figure class="show-slide" data-kind="image">
+                    <div class="show-media">
+                      <img src="assets/am-galerie-collage-live.jpg" alt="Collage de quatre photos d'A.M. en live : scène de nuit, groupe sur scène, portrait à la derbouka et scène en plan large" width="899" height="1599" loading="lazy" />
+                    </div>
+                    <figcaption class="show-cap"><h3>En live — moments de scène</h3><span class="show-kind">Photo</span></figcaption>
+                  </figure>
+                </div>
+              </div>
+              <button class="show-nav prev" id="showPrev" type="button" aria-label="Diapositive précédente">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+              </button>
+              <button class="show-nav next" id="showNext" type="button" aria-label="Diapositive suivante">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+            <div class="show-bar">
+              <div class="show-dots" id="showDots" role="tablist" aria-label="Choisir une diapositive"></div>
+              <span class="show-count" id="showCount" aria-live="polite">1 / 6</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIDÉOS -->
+      <section id="videos">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <p class="kicker">Performances</p>
+            <h2>Le show, en vidéo</h2>
+            <p>Deux extraits live d'A.M., à regarder ici même — cliquez sur lecture pour le son. D'autres vidéos suivront ; en attendant, le meilleur moyen de voir le show, c'est en vrai.</p>
+          </div>
+          <div class="videos-real">
+            <article class="vcard reveal">
+              <div class="vmedia">
+                <video src="assets/am-live-long-web.mp4" poster="assets/am-live-long-poster.jpg" controls preload="metadata" playsinline width="540" height="960" aria-label="Vidéo — Live en plein air : A.M. joue en extérieur, le jour, aux baguettes"></video>
+              </div>
+              <div class="vbody">
+                <span class="vtag">Live</span>
+                <h3>Live en plein air</h3>
+                <span class="vdur">2 min 52</span>
+              </div>
+            </article>
+            <article class="vcard reveal">
+              <div class="vmedia">
+                <video src="assets/am-live-short.mp4" poster="assets/am-live-short-poster.jpg" controls preload="metadata" playsinline width="576" height="1024" aria-label="Vidéo — Live, concert de nuit : scène éclairée, chanteurs et foule"></video>
+              </div>
+              <div class="vbody">
+                <span class="vtag">Live</span>
+                <h3>Live — concert de nuit</h3>
+                <span class="vdur">23 s</span>
+              </div>
+            </article>
+          </div>
+          <div class="videos">
+            <div class="slot reveal">
+              <span class="tag">Live</span>
+              <div>
+                <div class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                <h3>Solo kit moderne</h3>
+                <p>Vidéo à venir — emplacement réservé</p>
+              </div>
+            </div>
+            <div class="slot reveal">
+              <span class="tag">Session</span>
+              <div>
+                <div class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                <h3>Session live — extrait de concert</h3>
+                <p>Vidéo à venir — emplacement réservé</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ÉVÉNEMENTS -->
+      <section id="evenements">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <p class="kicker">Événements &amp; festivals</p>
+            <h2>Partout où le rythme compte</h2>
+          </div>
+          <div class="events">
+            <figure class="reveal">
+              <img src="assets/festival-gnawa.jpg" alt="Foule immense lors d'un festival de musique en plein air au Maroc, la nuit" />
+              <figcaption>L'ambiance des grandes nuits de festival au Maroc — le terrain de jeu favori du kit festival marocain.</figcaption>
+            </figure>
+            <div class="ev-list reveal">
+              <div class="ev">
+                <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/></svg></span>
+                <h3>Festivals &amp; grandes scènes</h3>
+                <p>Scènes plein air et festivals de musique : le kit festival marocain, pensé pour les grandes foules et les longues nuits.</p>
+              </div>
+              <div class="ev">
+                <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="14" r="5.5"/><circle cx="15" cy="10" r="5.5"/></svg></span>
+                <h3>Mariages &amp; célébrations</h3>
+                <p>De l'entrée des mariés à la dernière danse : une montée en puissance maîtrisée, du début à la fin de la soirée.</p>
+              </div>
+              <div class="ev">
+                <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-4 7 4v13"/><path d="M9.5 21v-5h5v5"/></svg></span>
+                <h3>Événements d'entreprise</h3>
+                <p>Lancements, soirées de gala, team building percussif : un show propre, ponctuel et adapté à votre image.</p>
+              </div>
+              <div class="ev">
+                <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18V6l10-2v11.5"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="15.5" r="2.5"/></svg></span>
+                <h3>Soirées privées &amp; clubs</h3>
+                <p>En solo, avec un DJ ou au sein d'un groupe : le kit moderne s'intègre à n'importe quelle programmation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERIE -->
+      <section id="galerie">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <p class="kicker">Galerie</p>
+            <h2>A.M. sur scène, en photos</h2>
+            <p>Cliquez sur une photo pour la voir en grand.</p>
+          </div>
+          <div class="gal reveal">
+            <figure>
+              <button type="button" class="gal-open" data-full="assets/am-galerie-portrait-derbouka.jpg" data-caption="Portrait — derbouka" aria-label="Agrandir la photo — Portrait — derbouka">
+                <img src="assets/am-galerie-portrait-derbouka.jpg" alt="Abdelmalek Moudakkir en blanc, assis, sa derbouka dorée sur les genoux, un carillon à sa gauche, en plein jour" width="854" height="1280" loading="lazy" />
+              </button>
+              <figcaption>Portrait — derbouka</figcaption>
+            </figure>
+            <figure>
+              <button type="button" class="gal-open" data-full="assets/am-galerie-groupe-scene.jpg" data-caption="Sur scène, avec le groupe" aria-label="Agrandir la photo — Sur scène, avec le groupe">
+                <img src="assets/am-galerie-groupe-scene.jpg" alt="Le groupe en tenue blanche, de dos sur scène, bras levés face au public et aux projecteurs" width="1280" height="854" loading="lazy" />
+              </button>
+              <figcaption>Sur scène, avec le groupe</figcaption>
+            </figure>
+            <figure>
+              <button type="button" class="gal-open" data-full="assets/am-galerie-scene-nuit-1.jpg" data-caption="Scène de nuit" aria-label="Agrandir la photo — Scène de nuit, premier angle">
+                <img src="assets/am-galerie-scene-nuit-1.jpg" alt="Abdelmalek Moudakkir de profil sur une scène de nuit, entre deux projecteurs" width="1200" height="1600" loading="lazy" />
+              </button>
+              <figcaption>Scène de nuit</figcaption>
+            </figure>
+            <figure>
+              <button type="button" class="gal-open" data-full="assets/am-galerie-scene-nuit-2.jpg" data-caption="Scène de nuit" aria-label="Agrandir la photo — Scène de nuit, deuxième angle">
+                <img src="assets/am-galerie-scene-nuit-2.jpg" alt="Abdelmalek Moudakkir sur la même scène de nuit, sous un angle légèrement différent, micro visible" width="1200" height="1600" loading="lazy" />
+              </button>
+              <figcaption>Scène de nuit</figcaption>
+            </figure>
+            <figure>
+              <button type="button" class="gal-open" data-full="assets/am-galerie-collage-live.jpg" data-caption="En live — moments de scène" aria-label="Agrandir la photo — En live, moments de scène">
+                <img src="assets/am-galerie-collage-live.jpg" alt="Collage de quatre photos d'A.M. en live : scène de nuit, groupe sur scène, portrait à la derbouka et scène en plan large" width="899" height="1599" loading="lazy" />
+              </button>
+              <figcaption>En live — moments de scène</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- RÉSERVATION & CONTACT -->
+      <section id="reservation">
+        <div class="wrap booking">
+          <div class="side reveal">
+            <div class="sec-head" style="margin-bottom:0">
+              <p class="kicker">Réservation &amp; contact</p>
+              <h2>Réservez votre date</h2>
+              <p class="contact-name">Abdelmalek Moudakkir</p>
+            </div>
+            <p style="margin-top:16px">Un festival, un mariage, une soirée ? Décrivez votre événement : le formulaire prépare votre demande, prête à être envoyée à A.M. Plus la date est demandée tôt, plus elle a de chances d'être libre.</p>
+            <div class="contact-lines">
+              <div>
+                <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span>
+                <div><b>Téléphone &amp; WhatsApp</b><span><a href="tel:+212780538222">+212 780 53 82 22</a> — appel direct ou message WhatsApp.</span></div>
+              </div>
+              <div>
+                <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+                <div><b>E-mail</b><span><a href="mailto:moudakkirabdelmalek0@gmail.com">moudakkirabdelmalek0@gmail.com</a></span></div>
+              </div>
+              <div>
+                <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.3-7-11a7 7 0 1 1 14 0c0 5.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+                <div><b>Zone d'intervention</b><span>Basé au Maroc — déplacements dans tout le Royaume selon l'événement.</span></div>
+              </div>
+              <div>
+                <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+                <div><b>Installation</b><span>Kit autonome, installation et balance rapides — prêt bien avant l'arrivée des invités.</span></div>
+              </div>
+              <div>
+                <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-4.4-7.7L21 3l-1 4.2c.6 1.5 1 3.1 1 4.8z"/><path d="M8.5 10.5c.5 2.5 3.5 5.5 6 6l1.7-1.7 3.3 1.6c.4.2.6.7.4 1.1-.7 1.4-2 2-3.4 1.7C9.9 18 6 14.1 4.8 7.5 4.5 6.1 5.1 4.8 6.5 4.1c.4-.2.9 0 1.1.4l1.6 3.3L8.5 10.5z" fill="currentColor" stroke="none" opacity=".0"/></svg></span>
+                <div><b>Réponse</b><span>Contactez A.M. directement par téléphone, WhatsApp ou e-mail — ou préparez votre demande avec le formulaire et envoyez-la en un clic.</span></div>
+              </div>
+            </div>
+          </div>
+
+          <form id="bookingForm" class="reveal" novalidate>
+            <div class="row">
+              <label>Votre nom
+                <input type="text" name="nom" id="f-nom" placeholder="Nom et prénom" autocomplete="name" />
+              </label>
+              <label>Téléphone ou e-mail
+                <input type="text" name="contact" id="f-contact" placeholder="Pour vous recontacter" autocomplete="tel" />
+              </label>
+            </div>
+            <div class="row">
+              <label>Type d'événement *
+                <select name="type" id="f-type" required>
+                  <option value="">Choisir…</option>
+                  <option>Festival</option>
+                  <option>Mariage</option>
+                  <option>Soirée privée</option>
+                  <option>Événement d'entreprise</option>
+                  <option>Concert / scène avec groupe ou DJ</option>
+                  <option>Autre</option>
+                </select>
+              </label>
+              <label>Kit souhaité
+                <select name="kit" id="f-kit">
+                  <option value="">À conseiller par A.M.</option>
+                  <option>Kit Festival Marocain</option>
+                  <option>Kit Mariage</option>
+                  <option>Kit Moderne</option>
+                </select>
+              </label>
+            </div>
+            <div class="row">
+              <label>Date de l'événement *
+                <input type="date" name="date" id="f-date" required />
+              </label>
+              <label>Ville *
+                <input type="text" name="ville" id="f-ville" placeholder="Ex. Casablanca" required />
+              </label>
+            </div>
+            <label>Votre message
+              <textarea name="message" id="f-message" placeholder="Lieu, nombre d'invités, horaires, ambiance souhaitée…"></textarea>
+            </label>
+            <p class="err" id="formErr">Merci de remplir au minimum le type d'événement, la date et la ville.</p>
+            <div class="form-actions">
+              <button type="submit" class="btn">Préparer ma demande</button>
+            </div>
+            <div class="result" id="formResult" role="status">
+              <h3>Votre demande est prête</h3>
+              <pre id="resultText"></pre>
+              <div class="row-btns">
+                <a class="btn small" id="waBtn" href="https://wa.me/212780538222" target="_blank" rel="noopener">Envoyer par WhatsApp</a>
+                <a class="btn small ghost" id="mailBtn" href="mailto:moudakkirabdelmalek0@gmail.com">Envoyer par e-mail</a>
+                <button type="button" class="btn small ghost" id="copyBtn">Copier la demande</button>
+                <button type="button" class="btn small ghost" id="dlBtn">Télécharger (.txt)</button>
+              </div>
+              <p style="margin:12px 0 0;color:var(--muted);font-size:14.5px" id="copyMsg">Envoyez ce texte à A.M. par WhatsApp au +212 780 53 82 22 ou par e-mail à moudakkirabdelmalek0@gmail.com pour confirmer la réservation.</p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="A.M. en live — photo agrandie">
+      <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Fermer">✕</button>
+      <figure>
+        <img src="assets/am-hero-hd.jpg" alt="A.M. en pleine performance : derbouka ornée de motifs dorés entre les mains, micro de scène, tenue blanche sur fond beige" width="2752" height="3648" />
+        <figcaption>Abdelmalek Moudakkir — en live<small>Derbouka, bendir et krakebs — pour réserver votre date : <a href="https://wa.me/212780538222" target="_blank" rel="noopener">WhatsApp +212 780 53 82 22</a></small></figcaption>
+      </figure>
+    </div>
+
+    <div class="lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Photo de la galerie agrandie">
+      <button class="lightbox-close" id="galleryClose" type="button" aria-label="Fermer">✕</button>
+      <figure>
+        <img id="galleryImg" alt="" />
+        <figcaption id="galleryCaption"></figcaption>
+      </figure>
+    </div>
+
+    <footer>
+      <div class="foot">
+        <a class="brand" href="#top" aria-label="A.M. — retour en haut">
+          <img class="logo-img" src="assets/logo-am.png" alt="Logo A.M. — Abdelmalek Moudakkir, batteur et percussionniste, derbouka stylisée sous le monogramme" width="839" height="537" loading="lazy" />
+          <span>
+            <span class="slogan">Le rythme qui marque</span>
+            <span class="artist">Abdelmalek Moudakkir</span>
+          </span>
+        </a>
+        <div class="foot-contact">
+          <a href="tel:+212780538222">+212 780 53 82 22</a>
+          <a href="mailto:moudakkirabdelmalek0@gmail.com">moudakkirabdelmalek0@gmail.com</a>
+        </div>
+        <nav aria-label="Pied de page">
+          <a href="#kits">Kits</a>
+          <a href="#show">Le Show</a>
+          <a href="#videos">Vidéos</a>
+          <a href="#evenements">Événements</a>
+          <a href="#galerie">Galerie</a>
+          <a href="#reservation">Réserver</a>
+        </nav>
+      </div>
+      <p class="credits">Photo d'A.M. en accueil, dans « À propos » et sur le Kit Festival Marocain : sa vraie photo, gardée telle quelle — seule la couleur est corrigée, tons un peu plus sombres et chauds assortis au site — déclinée en trois cadrages. Photo du Kit Moderne : A.M. en session, sa vraie photo elle aussi. Photos de la galerie et du Show, et vidéos live : les vraies photos et vidéos d'A.M. sur scène. Illustration restante : foule du Festival Gnaoua via Hespress.</p>
+    </footer>
+
+    <script>
+      (function(){
+        var burger=document.getElementById('burger');
+        var nav=document.getElementById('mainnav');
+        burger.addEventListener('click',function(){
+          var open=nav.classList.toggle('open');
+          burger.setAttribute('aria-expanded',open?'true':'false');
+        });
+        nav.addEventListener('click',function(e){
+          if(e.target.tagName==='A'){nav.classList.remove('open');burger.setAttribute('aria-expanded','false');}
+        });
+
+        /* ----- Bascule des effets : Classique / Aurora ----- */
+        var btnClassic=document.getElementById('fxClassic');
+        var btnAurora=document.getElementById('fxAurora');
+        var revealEls=document.querySelectorAll('.reveal');
+        function settle(el){setTimeout(function(){el.classList.add('settled');},1000);}
+        function markVisible(){
+          revealEls.forEach(function(el){
+            var r=el.getBoundingClientRect();
+            if(r.top<window.innerHeight){el.classList.add('in');settle(el);}
+          });
+        }
+        function setFx(on){
+          document.body.classList.toggle('fx',on);
+          btnAurora.classList.toggle('active',on);
+          btnClassic.classList.toggle('active',!on);
+          btnAurora.setAttribute('aria-pressed',on?'true':'false');
+          btnClassic.setAttribute('aria-pressed',on?'false':'true');
+          if(on){markVisible();}
+        }
+        btnAurora.addEventListener('click',function(){setFx(true);});
+        btnClassic.addEventListener('click',function(){setFx(false);});
+        if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){setFx(false);}
+
+        /* ----- Apparition des sections au scroll ----- */
+        if('IntersectionObserver' in window){
+          var io=new IntersectionObserver(function(entries){
+            entries.forEach(function(en){
+              if(en.isIntersecting){en.target.classList.add('in');settle(en.target);io.unobserve(en.target);}
+            });
+          },{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+          revealEls.forEach(function(el){io.observe(el);});
+        }else{
+          revealEls.forEach(function(el){el.classList.add('in');});
+        }
+
+        /* ----- Navbar lisible au scroll ----- */
+        var header=document.querySelector('header');
+        function onScroll(){header.classList.toggle('scrolled',window.scrollY>30);}
+        window.addEventListener('scroll',onScroll,{passive:true});
+        onScroll();
+
+        /* ----- Lightbox « Voir en live » ----- */
+        var lightbox=document.getElementById('lightbox');
+        var playBtn=document.getElementById('playBtn');
+        var lightboxClose=document.getElementById('lightboxClose');
+        function openLightbox(){lightbox.classList.add('open');lightboxClose.focus();}
+        function closeLightbox(){lightbox.classList.remove('open');playBtn.focus();}
+        playBtn.addEventListener('click',openLightbox);
+        lightboxClose.addEventListener('click',closeLightbox);
+        lightbox.addEventListener('click',function(e){if(e.target===lightbox){closeLightbox();}});
+        document.addEventListener('keydown',function(e){
+          if(e.key==='Escape'&&lightbox.classList.contains('open')){closeLightbox();}
+        });
+
+        /* ----- Lightbox Galerie ----- */
+        var gBox=document.getElementById('galleryLightbox');
+        var gImg=document.getElementById('galleryImg');
+        var gCap=document.getElementById('galleryCaption');
+        var gClose=document.getElementById('galleryClose');
+        var gLastFocus=null;
+        function gOpen(btn){
+          gLastFocus=btn;
+          gImg.src=btn.getAttribute('data-full');
+          var img=btn.querySelector('img');
+          gImg.alt=img?img.alt:'';
+          gCap.textContent=btn.getAttribute('data-caption')||'';
+          gBox.classList.add('open');
+          gClose.focus();
+        }
+        function gShut(){
+          gBox.classList.remove('open');
+          gImg.removeAttribute('src');
+          if(gLastFocus){gLastFocus.focus();}
+        }
+        document.querySelectorAll('.gal-open').forEach(function(btn){
+          btn.addEventListener('click',function(){gOpen(btn);});
+        });
+        gClose.addEventListener('click',gShut);
+        gBox.addEventListener('click',function(e){if(e.target===gBox){gShut();}});
+        document.addEventListener('keydown',function(e){
+          if(e.key==='Escape'&&gBox.classList.contains('open')){gShut();}
+        });
+
+        /* ----- Le Show : carrousel images + vidéos ----- */
+        var showRoot=document.getElementById('showCarousel');
+        if(showRoot){
+          var showTrack=document.getElementById('showTrack');
+          var showSlides=Array.prototype.slice.call(showTrack.children);
+          var showDotsBox=document.getElementById('showDots');
+          var showCount=document.getElementById('showCount');
+          var showIdx=0,showTimer=null,showHover=false;
+          var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          var showDots=showSlides.map(function(slide,i){
+            var b=document.createElement('button');
+            b.type='button';
+            b.setAttribute('aria-label','Aller à la diapositive '+(i+1)+' sur '+showSlides.length);
+            b.addEventListener('click',function(){showGo(i,true);});
+            showDotsBox.appendChild(b);
+            return b;
+          });
+          function showVideo(slide){return slide.querySelector('video');}
+          function showSchedule(){
+            showStop();
+            if(reduced||showHover||document.hidden){return;}
+            var v=showVideo(showSlides[showIdx]);
+            if(v&&!v.paused&&!v.ended){return;}
+            var delay=v?7500:5200;
+            showTimer=setTimeout(function(){showGo(showIdx+1,false);},delay);
+          }
+          function showStop(){if(showTimer){clearTimeout(showTimer);showTimer=null;}}
+          function showGo(i,manual){
+            showIdx=(i+showSlides.length)%showSlides.length;
+            showSlides.forEach(function(slide,j){
+              var vid=showVideo(slide);
+              if(vid&&j!==showIdx&&!vid.paused){vid.pause();}
+              slide.setAttribute('aria-hidden',j===showIdx?'false':'true');
+            });
+            showTrack.style.transform='translateX(-'+(showIdx*100)+'%)';
+            showDots.forEach(function(d,j){d.classList.toggle('active',j===showIdx);});
+            showCount.textContent=(showIdx+1)+' / '+showSlides.length;
+            showSchedule();
+          }
+          document.getElementById('showPrev').addEventListener('click',function(){showGo(showIdx-1,true);});
+          document.getElementById('showNext').addEventListener('click',function(){showGo(showIdx+1,true);});
+          showSlides.forEach(function(slide){
+            var v=showVideo(slide);
+            if(!v){return;}
+            v.addEventListener('play',function(){showStop();});
+            v.addEventListener('ended',function(){showGo(showIdx+1,false);});
+            v.addEventListener('pause',function(){
+              if(!v.ended&&showSlides[showIdx]===slide){showSchedule();}
+            });
+          });
+          showRoot.addEventListener('mouseenter',function(){showHover=true;showStop();});
+          showRoot.addEventListener('mouseleave',function(){showHover=false;showSchedule();});
+          showRoot.addEventListener('focusin',function(){showHover=true;showStop();});
+          showRoot.addEventListener('focusout',function(){showHover=false;showSchedule();});
+          var touchX=null;
+          showRoot.addEventListener('touchstart',function(e){
+            touchX=e.changedTouches[0].clientX;showStop();
+          },{passive:true});
+          showRoot.addEventListener('touchend',function(e){
+            if(touchX===null){showSchedule();return;}
+            var dx=e.changedTouches[0].clientX-touchX;
+            touchX=null;
+            if(Math.abs(dx)>48){showGo(showIdx+(dx<0?1:-1),true);}
+            else{showSchedule();}
+          },{passive:true});
+          document.addEventListener('visibilitychange',function(){
+            if(document.hidden){showStop();}else{showSchedule();}
+          });
+          showGo(0,false);
+        }
+
+        var form=document.getElementById('bookingForm');
+        var err=document.getElementById('formErr');
+        var result=document.getElementById('formResult');
+        var resultText=document.getElementById('resultText');
+        var copyMsg=document.getElementById('copyMsg');
+        var lastText='';
+
+        function val(id){var el=document.getElementById(id);return el?el.value.trim():'';}
+        function fmtDate(v){
+          if(!v)return '';
+          var p=v.split('-');if(p.length!==3)return v;
+          var months=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+          var d=new Date(+p[0],+p[1]-1,+p[2]);
+          var days=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+          return days[d.getDay()]+' '+p[2]+' '+months[+p[1]-1]+' '+p[0];
+        }
+
+        form.addEventListener('submit',function(e){
+          e.preventDefault();
+          var type=val('f-type'),date=val('f-date'),ville=val('f-ville');
+          if(!type||!date||!ville){err.classList.add('show');result.classList.remove('show');return;}
+          err.classList.remove('show');
+          var lines=[];
+          lines.push('DEMANDE DE RÉSERVATION — A.M. · Abdelmalek Moudakkir (batteur & percussionniste électrique)');
+          lines.push('');
+          if(val('f-nom'))lines.push('Nom : '+val('f-nom'));
+          if(val('f-contact'))lines.push('Contact : '+val('f-contact'));
+          lines.push('Type d\u2019événement : '+type);
+          if(val('f-kit'))lines.push('Kit souhaité : '+val('f-kit'));
+          lines.push('Date : '+fmtDate(date));
+          lines.push('Ville : '+ville);
+          if(val('f-message')){lines.push('');lines.push('Message :');lines.push(val('f-message'));}
+          lastText=lines.join('\n');
+          resultText.textContent=lastText;
+          document.getElementById('waBtn').href='https://wa.me/212780538222?text='+encodeURIComponent(lastText);
+          document.getElementById('mailBtn').href='mailto:moudakkirabdelmalek0@gmail.com?subject='+encodeURIComponent('Demande de réservation — A.M.')+'&body='+encodeURIComponent(lastText);
+          copyMsg.textContent='Envoyez ce texte à A.M. par WhatsApp au +212 780 53 82 22 ou par e-mail à moudakkirabdelmalek0@gmail.com pour confirmer la réservation.';
+          result.classList.add('show');
+          result.scrollIntoView({behavior:'smooth',block:'nearest'});
+        });
+
+        document.getElementById('copyBtn').addEventListener('click',function(){
+          function done(){copyMsg.textContent='Demande copiée — collez-la dans votre messagerie pour l\u2019envoyer à A.M.';}
+          if(navigator.clipboard&&navigator.clipboard.writeText){
+            navigator.clipboard.writeText(lastText).then(done,function(){fallback();});
+          }else{fallback();}
+          function fallback(){
+            var ta=document.createElement('textarea');
+            ta.value=lastText;document.body.appendChild(ta);ta.select();
+            try{document.execCommand('copy');done();}catch(_){}
+            document.body.removeChild(ta);
+          }
+        });
+
+        document.getElementById('dlBtn').addEventListener('click',function(){
+          var blob=new Blob([lastText],{type:'text/plain;charset=utf-8'});
+          var a=document.createElement('a');
+          a.href=URL.createObjectURL(blob);
+          a.download='demande-reservation-am.txt';
+          document.body.appendChild(a);a.click();
+          setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},400);
+        });
+      })();
+    </script>
+  </body>
+</html>
